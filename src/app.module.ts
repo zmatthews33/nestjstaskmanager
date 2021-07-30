@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TasksModule } from './tasks/tasks.module';
-import { TaskService } from './task/task.service';
+import { TasksService } from './tasks/tasks.service';
 
 @Module({
   imports: [TasksModule],
-  providers: [TaskService],
+  providers: [TasksService],
 })
 export class AppModule {}
