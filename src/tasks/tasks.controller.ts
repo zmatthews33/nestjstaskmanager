@@ -19,6 +19,7 @@ export class TasksController {
   constructor(private tasksService: TasksService) {}
 
   @Get()
+  // if we have any filters defined, call tasksService.getTasksWithFilters. Otherwise, get ALL tasks
   getTasks(@Query() filterDto: GetTasksFilterDto): Task[] {
     if (Object.keys(filterDto).length) {
       return this.tasksService.getTasksWithFilters(filterDto);
